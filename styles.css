@@ -1,0 +1,511 @@
+
+
+/*------------------  general  --------------------*/
+
+body{                       /*sin punto*/
+    margin-top: 0;          /*margen de todo el cuerpo de la pagina, hacia los costados, arriba y abajo*/
+
+    padding-top: 80px;      /*es para que el contenedor anclado este superior o por arriba de los elementos o contenedores de la pagina*/
+    padding-left: 96px;      /*espacio para la barra lateral*/
+
+    padding-right:16px;
+
+    background-color: rgb(250, 245, 245);
+    font-family: Roboto, Arial;
+
+}
+
+
+
+.p{
+    font-family: Roboto, Arial;
+    
+    
+    
+}
+
+
+
+
+
+
+
+/*--------------  encabezado  ------------------*/
+
+
+.divencabezado{
+    height: 57px;
+    display: flex;
+    flex-direction: row;         /*direccion en formato horizontal*/
+    justify-content: space-between;        /*distribuye uniformemente los contenedores*/
+
+
+
+    position: fixed;                       /*clava el contenedor en la pantalla para que al desplazar se siga viendo*/
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    z-index: 100;                           
+
+    border-bottom-width: 1px;             /*borde inferior del contenedor*/
+    border-bottom-style: solid;
+    border-bottom-color: rgb(206, 202, 202);
+
+
+
+}
+
+.secciondelaizquierda{
+    display: flex;
+    align-items: center;      /*acomoda los elementos en el centro del contenedor*/
+    
+    
+
+}
+
+.treslineas{
+    height: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+.treslineas:hover{
+    cursor: pointer;
+}
+
+.youtubelogo{
+    height: 20px;
+}
+.youtubelogo:hover{
+    cursor: pointer;
+}
+
+
+
+.secciondelmedio{
+    display: flex;
+    flex: 1;                      /*hace que el contenedor ocupe el espacio necesario*/                  
+    margin-left: 70px;
+    margin-right: 35px;
+    max-width: 500px;       /*ancho o largo del contenedor*/
+    align-items: center;
+
+}
+
+.barra-buscador{
+
+    font-size: 16px;        /*letra al escribir en la barra (no es la letra del placeholder)*/
+    display: block;
+    flex: 1;                /*alinea la barra de busqueda en todo el contenedor y hace que crezca a medida que el navegador se achica o agranda*/
+    height: 35px;
+    padding-left: 12px;      /*espacio entre el borde y el placeholder*/
+    border-width: 1px;       /*ancho de borde de la barra*/
+    border-style:solid;
+    border-color: rgb(181, 174, 174);
+    border-radius: 2px;
+    box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);        /*sombra en el interior*/
+    cursor: text;
+    width: 0;                 /*eliminamos el ancho predeterminado, para que al achicar la pagina, la barra se comprima*/
+
+}
+
+.barra-buscador::placeholder{
+    font-family: Roboto, Arial;
+    font-size: 16px;
+   
+}
+
+.barra-buscador:focus{             /*cuando esta enfocado para escribir*/
+    border-color: rgb(4, 138, 182);
+    outline: none;                /*eliminar el contorno predeterminado que los navegadores*/
+}
+
+.botonbuscador{
+    height: 39px;
+    width: 64px;
+    background-color: rgb(247, 247, 247);
+    cursor: pointer;
+    border-width: 1px;       
+    border-style:solid;
+    border-color: rgb(181, 174, 174);
+    border-radius: 2px;
+    margin-left: -1px;
+    margin-right: 10px;
+
+    position: relative;
+
+}
+
+
+.botonbuscador .cartelSearch{
+    position: absolute;
+    background-color: gray;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    bottom:-30px;
+    opacity: 0;                           /*lo hago invisible*/
+    transition: opacity 0.15s;
+    pointer-events: none;                  /*desactivo la interaccion con el puntero*/
+                                           /*hay que desactivarla ya que defini el cartel dentro del boton y al pasar el cursor sobre el cartel lo toma como boton y aparece el cartel */
+}
+
+.botonbuscador:hover .cartelSearch{
+    opacity: 1;
+}
+
+
+
+.botonbuscador:hover{
+    background-color: rgb(239, 236, 236);
+
+
+
+}
+
+
+.imagenbotonbuscador{
+    height: 25px;             /*tamaño de la imagen dentro del boton*/
+   
+}
+
+
+
+.botonbuscadorvoz{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(248, 248, 248);
+    position: relative;
+    display: flex;
+    justify-content: center;                 /*alineo el texto al centro*/
+    align-items: center;
+
+}
+
+.botonbuscadorvoz:hover{
+    cursor: pointer;
+}
+
+.imagenbotonbuscadordevoz{
+    width: 24px;                                /*tamaño de la imagen dentro del boton*/
+    
+   
+}
+
+.botonbuscadorvoz .cartelSearchvoice{
+    position: absolute;
+    background-color: gray;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    bottom:-30px;
+    opacity: 0;                           /*lo hago invisible*/
+    transition: opacity 0.15s;
+    pointer-events: none;
+    white-space: nowrap;                 /* texto continuo sin salto de renglon no importando que tan largo sea el texto*/
+
+}
+.botonbuscadorvoz:hover .cartelSearchvoice{
+    opacity: 1;
+    
+}
+
+
+
+
+.secciondeladerecha{
+    
+    width: 185px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 25px;
+    flex-shrink: 0;                       /*esto hace que los elementos no se junten, y se mantengan separados al achicar la pagina*/
+    
+}
+
+.divupload , .divapps, .divdenotificaciones{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.divupload .cartelUpload , .divapps .cartelApps, .divdenotificaciones .cartelNotificaciones{
+    position: absolute;
+    background-color: gray;
+    color: white;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    bottom:-30px;
+    opacity: 0;                           
+    transition: opacity 0.15s;
+    pointer-events: none;
+    white-space: nowrap;
+    font-family: Arial;               
+
+}
+
+.divupload:hover .cartelUpload , .divapps:hover .cartelApps, .divdenotificaciones:hover .cartelNotificaciones{
+    opacity: 1;
+    
+}
+
+
+
+
+.divdenotificaciones{
+    
+    position: relative;
+}
+
+.numeronotificacion{
+    position: absolute;
+    top:-2px;                               /*(al principio iba cero porque va en la punta del contenedor)*/
+    right:-3px;
+
+    font-size: 11px;
+    background-color: rgb(204, 0, 0);
+    color: white;
+    border-radius: 10px;
+    font-family: Roboto, Arial;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top:2px;
+    padding-bottom: 2px;
+}
+
+.imagenupload{
+    height: 24px;
+    cursor: pointer;
+    
+}
+
+.imagenapps{
+    height: 24px;
+    cursor: pointer;
+    
+}
+
+.imagennotificaciones{
+    height: 24px;
+    cursor: pointer;
+
+}
+
+.imagenmyperfil {
+    height: 32px;
+    border-radius: 16px;
+    cursor: pointer;
+    
+
+}
+
+
+
+
+
+
+
+
+
+/*--------------- demás  ------------------*/
+
+.lateral{
+   background-color: white;
+    color: white;
+    position: fixed;
+
+    left: 0;                                       /*pegado al lado izquierdo de la pagina*/
+    bottom: 0;                                     /*pegado al pie de pagina*/
+    top:55px;                                      /*con un margen de 55px*/
+    width: 72px;                                   /*la columna tiene un ancho de 72px*/
+
+    z-index: 200;
+    
+    padding-top: 5px;                             
+
+
+   
+    
+    
+}
+
+.lateralbox{
+   height: 74px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   
+    
+   
+}
+
+.lateralbox:hover{
+    background-color: rgb(226, 226, 226);
+    cursor: pointer;
+}
+
+.lateralbox img {
+    height: 24px;
+    margin-bottom: 4px;
+    
+}
+
+.lateral div {
+    font-family: Roboto, Arial;
+    font-size: 10px;
+    color: black;
+}
+
+
+
+.contenedores{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;                                 /*espacio entre columnas*/
+    row-gap: 40px;                                    /*espacio entre filas*/
+    
+}
+
+ /*                                                                  LA MODIFICACION SE ELIMINÓ PORQUE DEFINIMOS EL GRID
+        .contenedor{
+            width: 300px;
+
+            display: inline-block;
+            vertical-align: top;             -> el vertical aling tiene efecto porque definimos al contenedor como bloque de linea primero
+
+            margin-right: 15px;
+            margin-top:15px;} 
+
+*/    
+
+
+@media (max-width:870px) {
+    .contenedores{
+        grid-template-columns: 1fr 1fr;              /*dos columnas hasta 870*/
+    }
+}
+
+@media (min-width:871px) and (max-width:1119px) {
+    .contenedores{
+        grid-template-columns: 1fr 1fr 1fr;              /*tres columnas desde 871 hasta 1119*/
+    }
+}
+
+@media (min-width:1120px) {
+    .contenedores{
+        grid-template-columns: 1fr 1fr 1fr 1fr;              /*cuatro columnas como minimo hasta 1120*/
+    }
+}
+
+
+
+
+
+.contenedorminiatura{
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.miniatura{
+    
+    width:100%;
+    
+       
+}
+
+.temporizador{
+    font-family: Roboto,Arial;
+    font-size: 12px;
+    font-weight: 500;
+    padding-top: 2px;                        /*engordamos los paddings para definir mejor el borde esferico*/
+    padding-bottom: 2px; 
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 2px;
+
+
+    position: absolute;
+    background-color: black;
+    color: white;
+    right:10px;
+    bottom:10px;
+    
+
+}
+
+
+.imagenperfil-informacionvide-grid{
+    display: grid;
+    grid-template-columns: 50px 1fr;    /*50 pixeles que ocupa el ancho de la columna de imag de perfil y el resto se rellena*/
+   
+}
+
+
+.imagendeperfil-edit{
+    width: 36px;
+    border-radius: 100px; 
+}
+
+
+
+.titulodevideo{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;         /*tamaño entre el texto del parraro encima del otro*/
+    margin-block-start:0px ;
+    margin-block-end: 0px;
+    
+
+    
+}
+
+.autordevideo{
+    font-size: 12px;
+    color: rgb(96, 96, 96);
+    margin-top: 8px;
+    margin-bottom: 6px;
+    
+}
+
+
+.descripciondevideo{
+    font-size: 12px;
+    color: rgb(96, 96, 96);
+    margin-top: 0;
+    margin-bottom:0;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
